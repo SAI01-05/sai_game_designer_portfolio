@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sai Halwai | Game Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Metadata -->
+  <meta name="description"
+    content="Sai Halwai - Game Designer Portfolio showcasing Unity Engine projects and gameplay systems.">
+  <meta name="keywords" content="Game Designer, Unity Engine, Portfolio, Gameplay Developer">
+  <meta name="author" content="Sai Halwai">
+
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:wght@300;400;500&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= PARTICLE BACKGROUND ================= -->
+  <canvas id="particles"></canvas>
+
+  <!-- ================= START SCREEN ================= -->
+  <div id="start-screen">
+    <div class="hud-top">
+      <span>PLAYER ID: SAI-DEV</span>
+      <span>BUILD v2.0</span>
+    </div>
+
+    <div class="start-center">
+      <h1 class="glitch" data-text="SAI HALWAI">SAI HALWAI</h1>
+      <p class="game-role">🎮 GAME DESIGNER PORTFOLIO</p>
+
+      <button id="enter-btn">▶ PRESS START</button>
+      <p class="hint">Press <b>ENTER</b></p>
+      <p id="loading" class="hidden">LOADING<span class="dots"></span></p>
+    </div>
+
+    <div class="hud-bottom">
+      <span>© SYSTEM ONLINE</span>
+    </div>
+  </div>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <div id="main-content" class="hidden">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="nav nav-hidden">
+      <span class="logo">
+        🎮 Sai Halwai <span class="online-dot">●</span>
+      </span>
+
+
+      <!-- Hamburger for Mobile -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Menu Links -->
+      <div class="menu" id="menu">
+        <a href="#hero">Player</a>
+        <a href="#about">Bio</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+
+
+
+
+    <!-- ==============================================
+         HERO SECTION
+    ============================================== -->
+    <section id="hero" class="page fade hero">
+
+      <div class="hero-left">
+        <h1 class="hero-name">Sai Halwai</h1>
+        <h2 class="hero-role">Game Designer & Gameplay Developer</h2>
+
+        <p class="hero-tagline">Designing gameplay that feels right.</p>
+
+        <p class="hero-desc">
+          I design and prototype <strong>gameplay systems</strong> that feel responsive,
+          readable, and fun to play.
+          I primarily work with <strong>Unity</strong> for implementation and
+          <strong>Blender</strong> for game-ready 3D assets,
+          with a strong focus on player feel, balance, and iteration.
+        </p>
+
+        <ul class="hero-points">
+          <li>Gameplay mechanics & system design</li>
+          <li>Unity (C#) gameplay prototyping</li>
+          <li>Level design, player flow & iteration</li>
+          <li>Game-ready 3D assets & optimization (Blender)</li>
+        </ul>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn">View Projects</a>
+          <a href="resume.pdf" download class="btn secondary">
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <video autoplay loop muted playsinline>
+          <source src="videos/intro.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+    </section>
+
+
+
+    <!-- ==============================================
+         ABOUT SECTION
+    ============================================== -->
+    <section id="about" class="page fade about-section">
+
+      <h2 class="about-title">PLAYER BIO</h2>
+
+      <div class="about-box">
+
+        <p class="about-desc">
+          I am a gameplay-focused developer who works with Unity and Blender.
+          I enjoy creating gameplay mechanics, player systems, and interactive features.
+        </p>
+
+        <p class="about-desc">
+          Using Unity for development and Blender for assets and visuals,
+          I focus on building functional and engaging gameplay experiences.
+          I like experimenting, improving systems, and learning through practice.
+        </p>
+
+        <ul class="bio-list">
+          <li>🎯 <strong>Role:</strong> Gameplay Developer / Game Designer</li>
+          <li>🛠 <strong>Tools:</strong> Unity, Blender</li>
+          <li>🎮 <strong>Genres:</strong> Action, FPS, RPG</li>
+          <li>⚙ <strong>Focus:</strong> Gameplay mechanics, systems, level interaction</li>
+        </ul>
+
+        <p class="about-desc">
+          I am looking for opportunities to work with a team or studio where
+          skills and practical gameplay development matter.
+        </p>
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ================= PROJECTS SECTION ================= -->
+    <section id="projects" class="page fade">
+      <h2>MISSIONS</h2>
+
+      <!-- ================= FPS PROJECT ================= -->
+      <div class="project-block">
+
+        <h3>FPS Combat System</h3>
+
+        <!-- Main Gameplay -->
+        <div class="project-main-video">
+          <video controls>
+            <source src="videos/fps/main.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- Feature Clips -->
+        <div class="project-features">
+
+          <div class="feature-card">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="videos/fps/rayCast.mp4" type="video/mp4">
+            </video>
+            <div class="feature-info">
+              <h4>Raycast Interaction System</h4>
+              <p>Implemented a Raycast-based detection system for precise player interaction, supporting doors, keypads,
+                and expandable gameplay mechanics.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="videos/fps/enemyFollow.mp4" type="video/mp4">
+            </video>
+            <div class="feature-info">
+              <h4>Enemy Follow AI</h4>
+              <p>Basic AI tracking player using navigation logic and detection radius.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="videos/fps/DoorOpening.mp4" type="video/mp4">
+            </video>
+            <div class="feature-info">
+              <h4>Interactive Door System</h4>
+              <p>Trigger-based door animation with smooth open/close transition.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= Beat'Em Up ================= -->
+      <div class="project-block">
+
+        <h3>Beat 'Em Up Combat System</h3>
+
+        <div class="project-main-video">
+          <video controls>
+            <source src="videos/beat-em-up/main.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="project-features">
+
+          <div class="feature-card">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="videos/beat-em-up/combo.mp4" type="video/mp4">
+            </video>
+            <div class="feature-info">
+              <h4>Combo-Based Combat System</h4>
+              <p>Responsive punch and kick combo chaining with smooth animation transitions.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="videos/beat-em-up/attack-effects.mp4" type="video/mp4">
+            </video>
+            <div class="feature-info">
+              <h4>Combat Feel & Effects</h4>
+              <p>Hit impact effects, camera feedback, and timing-based interactions for better feel.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="videos/beat-em-up/enemy-combat.mp4" type="video/mp4">
+            </video>
+            <div class="feature-info">
+              <h4>Enemy AI Combat Behavior</h4>
+              <p>Enemies react, attack, and defend using simple state-based combat logic.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= CAR RACING ================= -->
+      <div class="project-block">
+
+        <h3>Car Racing Game</h3>
+
+        <div class="project-main-video">
+          <video controls>
+            <source src="videos/racing/main.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="project-features">
+
+          <div class="feature-card">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="videos/racing/drift.mp4" type="video/mp4">
+            </video>
+            <div class="feature-info">
+              <h4>Drift Mechanics</h4>
+              <p>Controlled drift physics with grip adjustment and smooth steering.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="videos/racing/terrain.mp4" type="video/mp4">
+            </video>
+            <div class="feature-info">
+              <h4>Terrain & Environment</h4>
+              <p>
+                Built terrain using Unity with basic texturing and environment elements, and used an external road asset
+                for the track.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="videos/racing/MiniMap.mp4" type="video/mp4">
+            </video>
+            <div class="feature-info">
+              <h4>MiniMap, AI Car & Lap Timer</h4>
+              <p>
+                Built a real-time minimap for player tracking, an AI car using waypoint path-following, and a lap timer
+                system to track race performance using Unity and C#.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= BLENDER SHOWCASE ================= -->
+      <div class="project-block">
+
+        <h3>Visual Effects & Cinematics</h3>
+
+        <div class="project-features blender-grid">
+
+          <video controls>
+            <source src="videos/blender/shot1.mp4" type="video/mp4">
+          </video>
+          <video controls>
+            <source src="videos/blender/shot2.mp4" type="video/mp4">
+          </video>
+          <video controls>
+            <source src="videos/blender/shot3.mp4" type="video/mp4">
+          </video>
+          <video controls>
+            <source src="videos/blender/shot4.mp4" type="video/mp4">
+          </video>
+
+          <video controls>
+            <source src="videos/blender/shot5.mp4" type="video/mp4">
+          </video>
+          <video controls>
+            <source src="videos/blender/shot6.mp4" type="video/mp4">
+          </video>
+          <video controls>
+            <source src="videos/blender/shot7.mp4" type="video/mp4">
+          </video>
+          <video controls>
+            <source src="videos/blender/shot8.mp4" type="video/mp4">
+          </video>
+
+          <video controls>
+            <source src="videos/blender/shot9.mp4" type="video/mp4">
+          </video>
+          <video controls>
+            <source src="videos/blender/shot10.mp4" type="video/mp4">
+          </video>
+          <video controls>
+            <source src="videos/blender/shot11.mp4" type="video/mp4">
+          </video>
+          <video controls>
+            <source src="videos/blender/shot12.mp4" type="video/mp4">
+          </video>
+
+        </div>
+
+        <p class="coming-soon">More Cinematics Coming Soon...</p>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ================= SKILLS SECTION ================= -->
+<section id="skills" class="page fade skill-map">
+
+  <h2 class="skill-title">SKILL TREE</h2>
+
+  <div class="skill-map-area">
+
+    <!-- WRAPPER (IMPORTANT FOR RESPONSIVE) -->
+    <div class="skills-wrapper">
+
+      <!-- ===== CORE ===== -->
+      <div class="skill-core">
+        GAME<br>SKILLS
+      </div>
+
+      <!-- ===== UNITY ===== -->
+      <div class="skill-node unity">
+        <span>Unity</span>
+        <div class="skill-popup">
+          <h4>Unity Gameplay</h4>
+          <p>
+            Player movement, combat systems,
+            C# scripting, camera logic,
+            prototyping & iteration.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===== BLENDER ===== -->
+      <div class="skill-node blender">
+        <span>Blender</span>
+        <div class="skill-popup">
+          <h4>Blender 3D</h4>
+          <p>
+            Modeling, UVs, game assets,
+            optimization, export for Unity.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===== VFX ===== -->
+      <div class="skill-node vfx">
+        <span>VFX</span>
+        <div class="skill-popup">
+          <h4>VFX & Particles</h4>
+          <p>
+            Particle systems, hit FX,
+            environment effects, feedback.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===== ANIMATION ===== -->
+      <div class="skill-node anim">
+        <span>Animation</span>
+        <div class="skill-popup">
+          <h4>Animation</h4>
+          <p>
+            Animation loops, rig basics,
+            blend trees, Mecanim setup.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===== SHADERS ===== -->
+      <div class="skill-node shader">
+        <span>Shaders</span>
+        <div class="skill-popup">
+          <h4>Shader Nodes</h4>
+          <p>
+            Shader Graph basics,
+            materials, visual polish.
+          </p>
+        </div>
+      </div>
+
+      <!-- ===== RENDERING ===== -->
+      <div class="skill-node render">
+        <span>Rendering</span>
+        <div class="skill-popup">
+          <h4>Rendering</h4>
+          <p>
+            Lighting, post-processing,
+            optimization & performance.
+          </p>
+        </div>
+      </div>
+
+    </div> <!-- END WRAPPER -->
+
+  </div>
+</section>
+
+
+    <!-- ================= CONTACT / MISSION SECTION ================= -->
+    <section id="contact" class="page fade mission-contact">
+      <h2 class="mission-title">MISSION REQUEST</h2>
+
+      <div class="mission-board">
+
+        <div class="mission-header">
+          <span class="status online">● ONLINE</span>
+          <span class="mission-id">MISSION #2077</span>
+        </div>
+
+        <div class="mission-body">
+          <div class="mission-info">
+            <p><strong>Player:</strong> Sai Halwai</p>
+            <p><strong>Role:</strong> Game Designer</p>
+          </div>
+
+          <div class="mission-tags">
+            <span>Gameplay Systems</span>
+            <span>Mechanics Design</span>
+            <span>Level Design</span>
+          </div>
+        </div>
+
+        <p class="mission-intent">
+          “Seeking a team where skill, execution, and creativity truly matter.”
+        </p>
+
+        <div class="mission-reward">
+          <p>🎯 Mission Types Accepted</p>
+          <ul>
+            <li>Internship</li>
+            <li>Full-Time</li>
+          </ul>
+        </div>
+
+        <div class="mission-actions">
+          <a href="mailto:saihalwai01@gmail.com" class="mission-btn">
+            ▶ ACCEPT MISSION
+          </a>
+        </div>
+
+      </div>
+
+      <div class="mission-links">
+        <a href="mailto:saihalwai01@gmail.com">📧 Email</a>
+        <a href="tel:+917517020206">📱 Phone</a>
+        <a href="https://www.linkedin.com/in/sai-halwai-179923289" target="_blank">
+          💼 LinkedIn
+        </a>
+        <a href="https://github.com/SAI01-05" target="_blank">
+          💻 GitHub
+        </a>
+      </div>
+
+      <p class="footer-note">© 2026 Sai Halwai</p>
+    </section>
+
+
+    <!-- MAIN JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>

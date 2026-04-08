@@ -1,0 +1,1260 @@
+/* ==============================================
+   VARIABLES / ROOT COLORS
+   ============================================== */
+:root {
+  --bg-dark: #02040a;
+  --bg-blue: #0b1a2a;
+  --primary: #00ffff;
+  --secondary: #ff00ff;
+  --accent: #00ff88;
+  --text-main: #e0f7ff;
+  --glass: rgba(0, 255, 255, 0.08);
+  --glow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* ==============================================
+   GLOBAL RESET
+   ============================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+   font-family: 'Audiowide', sans-serif;
+  letter-spacing: 1px;
+   font-weight: 400;
+}
+
+button,
+.btn,
+.nav,
+.menu a,
+.mission-btn,
+.logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* scroll-padding-top: 120px; */
+}
+
+/* ==============================================
+   PARTICLES CANVAS BACKGROUND
+   ============================================== */
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* ==============================================
+   START SCREEN
+   ============================================== */
+#start-screen {
+  height: 100vh;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: radial-gradient(circle at top, var(--bg-blue), var(--bg-dark));
+}
+
+/* HUD TOP/BOTTOM */
+.hud-top, .hud-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* CENTER CONTENT */
+.start-center {
+  text-align: center;
+}
+
+/* GLITCH TEXT EFFECT */
+.glitch {
+  font-size: clamp(2rem, 8vw, 4rem);
+  color: var(--primary);
+  position: relative;
+  text-shadow: 0 0 20px var(--primary);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.hint {
+  margin-top: 5px;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.glitch::before {
+  color: var(--secondary);
+  transform: translate(-2px, -2px);
+  animation: glitch1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  color: var(--accent);
+  transform: translate(2px, 2px);
+  animation: glitch2 2.5s infinite linear alternate-reverse;
+}
+
+/* GLITCH ANIMATIONS */
+@keyframes glitch1 {
+  0% {clip-path: inset(0 0 90% 0);}
+  50% {clip-path: inset(40% 0 40% 0);}
+  100% {clip-path: inset(80% 0 0 0);}
+}
+
+@keyframes glitch2 {
+  0% {clip-path: inset(80% 0 0 0);}
+  50% {clip-path: inset(10% 0 70% 0);}
+  100% {clip-path: inset(0 0 90% 0);}
+}
+
+/* GAME ROLE / SUBTEXT */
+.game-role {
+  margin: 20px 0 30px;
+  letter-spacing: 3px;
+  opacity: 0.7;
+}
+
+/* BUTTONS */
+#enter-btn, .btn {
+  padding: 12px 30px;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+#enter-btn:hover, .btn:hover {
+  background: var(--primary);
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* HIDE ELEMENTS */
+.hidden {
+  display: none;
+}
+
+/* LOADING EFFECT */
+#loading {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary);
+}
+
+.dots::after {
+  content: "";
+  animation: dots 1.5s infinite steps(4);
+}
+
+@keyframes dots {
+  0% { content: ""; }
+  25% { content: "."; }
+  50% { content: ".."; }
+  75% { content: "..."; }
+  100% { content: ""; }
+}
+
+/* ==============================================
+   NAVBAR
+   ============================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(0,255,255,0.35);
+  box-shadow: 0 0 30px rgba(0,255,255,0.2);
+  z-index: 1000;
+}
+
+.nav.scrolled {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 0 35px rgba(0,255,255,0.35);
+}
+
+.nav::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  animation: fpsLine 3s linear infinite;
+}
+
+@keyframes fpsLine {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.nav-hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.logo {
+  color: var(--primary);
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px var(--primary);
+}
+
+.logo {
+  font-size: 18px;       /* small + neat */
+  font-weight: 600;
+  color: #00ffff;        /* cyan gaming vibe */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.online-dot {
+  color: rgb(255, 0, 212);         
+  font-size: 14px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+
+
+.menu a {
+  margin-left: 20px;
+  color: #aaa;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: var(--primary);
+  text-shadow: 0 0 12px var(--primary);
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: 0.3s;
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+  width: 100%;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+/* ==============================================
+   SECTIONS
+   ============================================== */
+.page {
+  min-height: 100vh;
+  padding: 100px 10% 80px;
+}
+
+/* FADE IN ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==============================================
+   HERO SECTION
+   ============================================== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-name {
+  font-size: clamp(2.8rem, 5vw, 3.8rem);
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.hero-role {
+  font-size: 1.3rem;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.hero-tagline {
+  font-size: 14px;
+  opacity: 0.75;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.hero-desc {
+  max-width: 580px;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.hero-desc strong {
+  color: var(--primary);
+}
+
+.hero-points {
+  margin-bottom: 30px;
+  padding-left: 18px;
+}
+
+.hero-points li {
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 18px;
+}
+
+.hero-actions .btn:first-child {
+  box-shadow: 0 0 18px rgba(0,255,255,0.6);
+}
+
+.btn.secondary {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.btn.secondary:hover {
+  background: var(--secondary);
+  color: #000;
+}
+
+/* HERO RIGHT VIDEO */
+.hero-right {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+  overflow: hidden; /* ensure video corners follow border-radius */
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-right video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(0,255,255,0.4);
+  object-fit: cover;
+  display: block;
+}
+
+.hero-right::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25); /* subtle dark overlay */
+  pointer-events: none; /* text/buttons above remain clickable */
+  border-radius: 12px;
+}
+
+
+/* MOBILE HERO ADJUSTMENTS */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-points {
+    text-align: left;
+    max-width: 420px;
+    margin: 0 auto 30px;
+  }
+
+  .hero-right video {
+    max-width: 280px;
+    margin-top: 25px;
+  }
+}
+
+/* ==============================================
+   ABOUT / PLAYER BIO SECTION
+   ============================================== */
+.about-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.about-title {
+  font-size: 34px;
+  letter-spacing: 3px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+
+  /* Primary color */
+  color: #e85cff; /* soft magenta, not flashy */
+
+  /* Subtle dual-tone depth */
+  text-shadow:
+    1px 0 #00cfcf,
+    -1px 0 rgba(232,92,255,0.6),
+    0 0 10px rgba(0,207,207,0.35);
+}
+
+
+.about-box {
+  max-width: 650px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 0 25px #00ffff;
+  text-align: left;
+}
+
+.about-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #c0ffff;
+  margin-bottom: 18px;
+}
+
+.bio-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.bio-list li {
+  font-size: 14px;
+  padding: 6px 0;
+  color: #ffddff;
+  position: relative;
+  transition: 0.3s;
+}
+
+.bio-list li::before {
+  content: '•';
+  color: #00ffff;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.bio-list li:hover {
+  color: #ff66cc;
+  transform: translateX(5px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== PROJECT NEW STRUCTURE ===== */
+
+.project-block {
+  margin-bottom: 80px;
+}
+
+.project-block h3 {
+  margin-bottom: 20px;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary);
+}
+
+.project-main-video video {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 25px rgba(0,255,255,0.4);
+  margin-bottom: 20px;
+}
+
+.project-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.project-features video {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(0,255,255,0.5);
+  transition: 0.3s;
+}
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.feature-card video {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(0,255,255,0.5);
+  transition: 0.4s ease;
+}
+
+/* Overlay */
+.feature-info {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.feature-info h4 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.feature-info p {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* Hover Effect */
+.feature-card:hover video {
+  transform: scale(1.1);
+}
+
+.feature-card:hover .feature-info {
+  opacity: 1;
+}
+
+/* Blender Grid – No Overlay Effect */
+
+.blender-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.blender-grid video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(0,255,255,0.5);
+  transition: 0.3s ease;
+}
+
+.blender-grid video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--primary);
+}
+
+.coming-soon {
+  margin-top: 20px;
+  opacity: 0.7;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==============================================
+   SKILLS SECTION – FULL RESPONSIVE HEX TREE
+============================================== */
+
+.skill-map {
+  text-align: center;
+  position: relative;
+  padding: 80px 20px;
+}
+
+.skill-title {
+  color: #00ffea;
+  text-shadow: 0 0 8px #00ffea, 0 0 20px #00ffd0;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+/* ===== MAP AREA ===== */
+.skill-map-area {
+  position: relative;
+  width: 520px;
+  height: 500px;
+  margin: 40px auto;
+  transition: transform 0.3s ease;
+}
+
+/* ===== CORE ===== */
+.skill-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00ffff, #003344);
+  color: #001111;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 35px #00ffff;
+  z-index: 2;
+}
+
+/* ===== SKILL NODE ===== */
+.skill-node {
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.75);
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.35s ease;
+  z-index: 3;
+}
+
+.skill-node:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 30px currentColor;
+  z-index: 10;
+}
+
+/* ===== POPUP ===== */
+.skill-popup {
+  position: absolute;
+  top: 50%;
+  left: 115%;
+  transform: translateY(-50%);
+  width: 230px;
+  background: linear-gradient(145deg, #020b12, #000);
+  border: 1px solid currentColor;
+  padding: 14px;
+  border-radius: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  text-align: left;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+
+.skill-popup h4 {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: currentColor;
+}
+
+.skill-popup p {
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.skill-node:hover .skill-popup {
+  opacity: 1;
+}
+
+/* ===== HEXAGON POSITIONS ===== */
+.skill-node.unity   { top: 0%; left: 50%; transform: translateX(-50%); }
+.skill-node.blender { top: 25%; right: 0%; }
+.skill-node.vfx     { bottom: 25%; right: 0%; }
+.skill-node.anim    { bottom: 0%; left: 50%; transform: translateX(-50%); }
+.skill-node.shader  { bottom: 25%; left: 0%; }
+.skill-node.render  { top: 25%; left: 0%; }
+
+/* ===== COLOR THEMES ===== */
+.skill-node.unity   { color: #00ffff; }
+.skill-node.blender { color: #ff9d00; }
+.skill-node.vfx     { color: #ff2cff; }
+.skill-node.anim    { color: #00ff88; }
+.skill-node.shader  { color: #9f7bff; }
+.skill-node.render  { color: #00ffcc; }
+
+
+
+
+
+
+/* ==============================================
+   CONTACT / MISSION SECTION
+============================================== */
+
+.mission-contact {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.mission-title {
+  font-size: 34px;
+  margin-bottom: 35px;
+  letter-spacing: 2px;
+}
+
+/* BOARD */
+.mission-board {
+  max-width: 620px;
+  margin: 0 auto 40px;
+  padding: 28px;
+  border: 1px solid var(--primary);
+  background: rgba(0,255,255,0.06);
+  border-radius: 14px;
+}
+
+/* HEADER */
+.mission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.status.online {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* BODY */
+.mission-info p {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.mission-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.mission-tags span {
+  border: 1px solid var(--primary);
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+/* REWARD */
+.mission-reward ul {
+  list-style: none;   /* remove default white dot */
+  padding: 0;         /* remove left space */
+  margin-top: 8px;
+}
+
+.mission-reward li {
+  text-align: center;
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+/* Custom Center Dot */
+.mission-reward li::before {
+  content: "- ";
+  color: var(--primary);
+}
+
+/* ACTION */
+.mission-actions {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.mission-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.mission-btn:hover {
+  background: var(--primary);
+  color: #000;
+}
+
+/* LINKS */
+.mission-links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.mission-links a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.mission-links a:hover {
+  color: var(--accent);
+}
+
+/* FOOTER */
+.footer-note {
+  margin-top: 45px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+.mission-intent {
+  margin-top: 18px;
+  font-size: 14px;
+  opacity: 0.85;
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FINAL RESPONSIVE SYSTEM (CLEAN + FIXED)
+   Covers: Mobile, Tablet, Laptop, 4K, TV
+   ========================================================= */
+
+
+/* =========================================================
+   LARGE SCREENS / 2K / 4K / TV – Adjust skill nodes
+   ========================================================= */
+@media (min-width: 1600px) {
+  .skill-map-area {
+    width: 600px;
+    height: 560px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Position each node around the core nicely */
+  .skill-core {
+    width: 120px;
+    height: 120px;
+  }
+
+  .skill-node.unity   { top: 20px; left: 50%; transform: translateX(-50%); }
+  .skill-node.blender { top: 50%; left: 0; transform: translateY(-50%); }
+  .skill-node.vfx     { top: 50%; right: 0; transform: translateY(-50%); }
+  .skill-node.anim    { bottom: 20px; left: 50%; transform: translateX(-50%); }
+  .skill-node.shader  { top: 0; left: 20px; }
+  .skill-node.render  { top: 0; right: 20px; }
+}
+
+
+/* =========================================================
+   LAPTOPS / SMALL DESKTOPS
+   ========================================================= */
+@media (max-width: 1200px) {
+
+  .page {
+    padding: 140px 8% 80px;
+  }
+
+  .hero {
+    gap: 40px;
+  }
+
+  .project-main-video video {
+    height: 380px;
+  }
+
+  .skill-map-area {
+    width: 480px;
+    height: 460px;
+  }
+}
+
+
+/* =========================================================
+   TABLET (IMPORTANT FIX ZONE)
+   ========================================================= */
+@media (max-width: 900px) {
+
+  /* ================= NAV MENU ================= */
+  .menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 240px;
+    height: 100vh;
+
+    background: rgba(0,0,0,0.98);
+
+    display: flex;
+    flex-direction: column;
+    padding: 50px 25px;
+    gap: 25px;
+
+    transition: 0.4s ease;
+    z-index: 999;
+  }
+
+  .menu.active { right: 0; }
+
+  .menu a {
+    font-size: 15px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+
+  /* ================= HERO ================= */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 35px;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-right {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .hero-points {
+    text-align: left;
+    max-width: 420px;
+    margin: 0 auto 30px;
+  }
+
+
+  /* ================= PROJECTS ================= */
+  .project-main-video video {
+    height: 260px;
+  }
+
+  .project-features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card video {
+    height: 200px;
+  }
+
+  .blender-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blender-grid video {
+    height: 170px;
+  }
+
+
+  /* ================= SKILL TREE FIX ================= */
+  .skill-map-area {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  /* remove absolute layout */
+  .skill-node.unity,
+  .skill-node.blender,
+  .skill-node.vfx,
+  .skill-node.anim,
+  .skill-node.shader,
+  .skill-node.render {
+    top: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+    right: unset !important;
+  }
+
+  .skill-core {
+    position: relative;
+    transform: none;
+    margin-bottom: 10px;
+  }
+
+  .skill-node {
+    position: relative;
+    transform: none !important;
+  }
+
+  /* popup always visible (better UX mobile) */
+  .skill-popup {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: none;
+
+    margin-top: 10px;
+    opacity: 1;
+
+    pointer-events: auto;
+  }
+
+
+  /* ================= CONTACT ================= */
+  .mission-board {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .mission-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mission-links {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width: 600px) {
+
+  .page {
+    padding: 120px 6% 60px;
+  }
+
+  .hero-name { font-size: 2.2rem; }
+  .hero-role { font-size: 1rem; }
+  .hero-desc { font-size: 14px; }
+  .hero-points { font-size: 13px; }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-right {
+    max-width: 260px;
+  }
+
+  .project-main-video video {
+    height: 220px;
+  }
+
+  .feature-card video {
+    height: 170px;
+  }
+
+  .blender-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blender-grid video {
+    height: 160px;
+  }
+
+  .mission-board {
+    padding: 18px;
+  }
+
+  .mission-title {
+    font-size: 26px;
+  }
+
+  .about-box {
+    padding: 20px 16px;
+  }
+
+  /* skill sizing */
+  .skill-core {
+    width: 100px;
+    height: 100px;
+    font-size: 12px;
+  }
+
+  .skill-node {
+    width: 85px;
+    height: 85px;
+    font-size: 11px;
+  }
+
+  .skill-popup {
+    width: 180px;
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+   ========================================================= */
+@media (max-width: 400px) {
+
+  .hero-name {
+    font-size: 1.9rem;
+  }
+
+  .hero-desc {
+    font-size: 13px;
+  }
+
+  .feature-card video {
+    height: 150px;
+  }
+
+  .project-main-video video {
+    height: 200px;
+  }
+}
+
