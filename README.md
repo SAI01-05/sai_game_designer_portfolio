@@ -1,163 +1,146 @@
 # Game Design Portfolio
 
 ## Introduction
-
-This portfolio presents my work as a Game Designer, focusing on gameplay systems, level design, and player experience. Each project demonstrates my ability to conceptualize, prototype, and refine interactive systems with a strong emphasis on player engagement and design clarity.
+This portfolio showcases my work as a Game Designer with a focus on gameplay systems, player experience, and interactive design. The projects presented here demonstrate my ability to design, prototype, and implement engaging gameplay mechanics using Unity and C#.
 
 ---
 
 ## Designer Profile
+I design gameplay systems that are intuitive, balanced, and engaging. My approach combines creative thinking with structured problem-solving to deliver smooth and meaningful player experiences.
 
-I specialize in designing systems that are intuitive, balanced, and engaging. My approach combines creative thinking with analytical problem-solving to deliver meaningful gameplay experiences.
-
-**Core Strengths:**
-
-* Gameplay Systems Design
-* Level Design & Spatial Flow
-* Player Psychology & Engagement
-* Game Balancing & Progression Systems
-* Rapid Prototyping & Iteration
+### Core Strengths
+- Gameplay Systems Design  
+- Level Design and Player Flow  
+- Player Engagement and Game Feel  
+- Game Balancing and Progression Systems  
+- Rapid Prototyping and Iteration  
 
 ---
 
-## Tools & Technologies
+## Tools and Technologies
 
-**Game Engines:**
+### Game Engine
+- Unity (C#)
 
-* Unity (C#)
+### 3D Tools
+- Blender  
 
-
-**3D & Art Tools:**
-
-* Blender
-
-**Other:**
-
-* Git / Version Control
-* Basic scripting and debugging
+### Other
+- Git / Version Control  
+- Debugging and Optimization  
 
 ---
 
 ## Project Showcase
 
-### Project 1: [Game Title]
+### FPS Game (First-Person Shooter)
 
-**Overview:**
-A brief description of the game concept, genre, target audience, and platform.
+**Overview**  
+A first-person shooter focused on responsive controls and smooth shooting mechanics.
 
-**Design Goals:**
+**Key Features**
+- First-person movement and camera system  
+- Shooting system with basic weapon mechanics  
+- Enemy interaction and simple AI behavior  
+- Smooth player controls  
 
-* Define the core player experience (e.g., exploration, challenge, narrative)
-* Establish clear gameplay loops
-* Ensure accessibility and intuitive controls
+**My Role**
+- Designed core gameplay mechanics  
+- Implemented player controller and shooting system  
+- Developed camera handling and interaction logic  
 
-**My Role:**
+**Tools Used**  
+Unity, C#
 
-* Designed and documented core gameplay mechanics
-* Created level layouts and progression structure
-* Collaborated with developers/artists to implement features
+**Status**  
+Completed  
 
-**Key Contributions:**
-
-* Developed core gameplay loop (Core → Meta progression)
-* Designed level flow with pacing and difficulty scaling
-* Balanced systems based on playtesting feedback
-
-**Process:**
-
-1. Concept development and reference research
-2. Paper and digital prototyping
-3. Iteration based on internal testing
-4. Final implementation and polish
-
-**Tools Used:**
-Unity, Blender
-
-**Outcome:**
-
-* Summary of results (e.g., improved engagement, successful prototype, user feedback)
-
-**Links:**
-
-* Gameplay Video: [Link]
 
 
 ---
 
-### Project 2: [Game Title]
+### Car Racing Game
 
-**Overview:**
-Short description of the game and its core idea.
+**Overview**  
+A 3D car racing and driving simulation focused on realistic movement and player control.
 
-**My Role:**
+**Key Features**
+- Car physics including acceleration, braking, and steering  
+- Lap system and basic race flow  
+- Camera follow system  
+- Smooth vehicle handling  
 
-* Designed UI/UX flow and interaction systems
-* Built gameplay prototypes for testing
+**My Role**
+- Developed car controller and movement system  
+- Designed gameplay flow and racing experience  
+- Implemented lap system logic  
 
-**Key Contributions:**
+**Tools Used**  
+Unity, C#
 
-* Improved player onboarding experience
-* Designed intuitive navigation and feedback systems
+**Status**  
+Completed  
 
-**Tools Used:**
-Unreal Engine
 
-**Links:**
+---
 
-* Gameplay Video: [Link]
+### Beat ’em Up Game (Work in Progress)
+
+**Overview**  
+A side-scrolling action game focused on melee combat and enemy interactions.
+
+**Key Features**
+- Combat system with attacks and basic combos  
+- Enemy AI behavior  
+- Health and damage system  
+- Character animations (idle, movement, attack)  
+
+**My Role**
+- Designing combat mechanics and interaction systems  
+- Implementing animations and gameplay logic  
+- Developing enemy behavior  
+
+**Tools Used**  
+Unity, C#, Blender  
+
+**Status**  
+In Progress  
+
 
 
 ---
 
 ## Design Methodology
 
-My workflow follows a structured, iterative design process:
-
-1. **Research & Analysis**
-   Study similar games, target audience, and market trends
-
-2. **Concept & Ideation**
-   Define core mechanics, player goals, and experience
-
-3. **Prototyping**
-   Build quick prototypes to validate ideas
-
-4. **Playtesting**
-   Observe player behavior and gather feedback
-
-5. **Iteration & Balancing**
-   Refine mechanics, difficulty, and progression
-
-6. **Documentation**
-   Maintain clear design documentation for team alignment
+1. Research and analysis of similar games and player expectations  
+2. Concept development and gameplay planning  
+3. Prototyping core mechanics  
+4. Playtesting and feedback collection  
+5. Iteration and balancing  
+6. Final refinement and documentation  
 
 ---
 
-## Key Design Principles
-
-* Player-first design approach
-* Clarity over complexity
-* Consistent feedback systems
-* Balanced progression and difficulty
-* Iteration driven by testing and data
+## Design Principles
+- Player-first design approach  
+- Clarity over complexity  
+- Consistent feedback systems  
+- Balanced progression and difficulty  
+- Iteration based on testing  
 
 ---
 
 ## Education
-
-* [Bsc.Computer Science] – [Shree SaiBaba College,Shirdi]
-* Relevant coursework: Game Design, Interactive Media, Programming Fundamentals
+BSc Computer Science – Shree Sai Baba College, Shirdi  
 
 ---
 
 ## Contact
-
-* Email: [saihalwai01@gmail.com]
-* LinkedIn: [www.linkedin.com/in/sai-halwai-179923289]
-* Portfolio Website: [https://sai01-05.github.io/sai_game_designer_portfolio/]
+Email: saihalwai01@gmail.com  
+LinkedIn: https://linkedin.com/in/sai-halwai-179923289  
+Portfolio: https://sai01-05.github.io/sai_game_designer_portfolio/
 
 ---
 
 ## Notes
-
-All projects included in this portfolio are presented for evaluation and professional purposes. 
+All projects included in this portfolio are developed for learning and professional demonstration purposes.
